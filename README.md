@@ -4,7 +4,7 @@ A **Telegram bot** built with `Telethon` that listens for messages **containing 
 ---
 
 ## 🚀 **Features**
-✅ **Listens for messages containing "@all"** in group chats.  
+✅ **Listens for messages containing "@all" or "@\<bot_username\>"** in group chats.  
 ✅ **Mentions all group members with constraints** to avoid excessive mentions.  
 ✅ **Handles different group sizes:**
    - **More than 10 members** → ❌ **Does nothing**.
