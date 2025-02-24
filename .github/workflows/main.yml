@@ -20,4 +20,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            systemctl restart telegram-bot
+            ${{ secrets.SCRIPT }}
