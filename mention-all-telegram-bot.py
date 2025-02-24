@@ -23,8 +23,7 @@ async def get_all_members(event):
             members.append(f"[{user.first_name}](tg://user?id={user.id})")
 
     return members
-
-@client.on(events.NewMessage(func=lambda e: e.is_group and "@all" in e.raw_text))
+@client.on(events.NewMessage(func=lambda e: e.is_group and ("@all" in e.raw_text or "@mention_all_group_members_bot" in e.raw_text)))
 async def mention_all(event):
     """Reply to messages containing '@all' by mentioning all group members with constraints"""
     sender = await event.get_sender()
