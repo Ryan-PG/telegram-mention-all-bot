@@ -8,7 +8,7 @@ load_dotenv()
 api_id = os.getenv("API_ID")
 api_hash = os.getenv("API_HASH")
 bot_token = os.getenv("BOT_TOKEN")
-bot_id = int(os.getenv("BOT_ID"))
+bot_id = os.getenv("BOT_ID")
 
 client = TelegramClient("bot_session", api_id, api_hash).start(bot_token=bot_token)
 
