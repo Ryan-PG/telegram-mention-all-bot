@@ -45,10 +45,10 @@ Inside the project folder, create a `.env` file and add your Telegram bot creden
 API_ID=your_api_id
 API_HASH=your_api_hash
 BOT_TOKEN=your_bot_token
-BOT_ID=your_bot_id
+BOT_USERNAME=your_bot_username
 ```
 
-Replace `your_api_id`, `your_api_hash`, `your_bot_token`, and `your_bot_id` with your actual credentials. The `BOT_ID` should be the numeric ID of your bot (not the username).
+Replace `your_api_id`, `your_api_hash`, `your_bot_token`, and `your_bot_id` with your actual credentials. The `BOT_USERNAME` should be the username of your bot (without @).
 
 ### **4️⃣ Run the bot**
 Start the bot with:

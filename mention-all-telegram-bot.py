@@ -8,7 +8,7 @@ load_dotenv()
 api_id = os.getenv("API_ID")
 api_hash = os.getenv("API_HASH")
 bot_token = os.getenv("BOT_TOKEN")
-bot_id = os.getenv("BOT_ID")
+bot_username = os.getenv("BOT_USERNAME")
 
 client = TelegramClient("bot_session", api_id, api_hash).start(bot_token=bot_token)
 
@@ -18,7 +18,8 @@ async def get_all_members(event):
     members = []
     
     async for user in client.iter_participants(chat):
-        if user.id == bot_id:
+        print(user.username, bot_username)
+        if user.username == bot_username:
             continue  # Skip the bot itself
         if user.username:
             members.append(f"@{user.username}")
