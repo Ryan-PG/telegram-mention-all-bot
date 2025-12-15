@@ -45,9 +45,10 @@ Inside the project folder, create a `.env` file and add your Telegram bot creden
 API_ID=your_api_id
 API_HASH=your_api_hash
 BOT_TOKEN=your_bot_token
+BOT_ID=your_bot_id
 ```
 
-Replace `your_api_id`, `your_api_hash`, and `your_bot_token` with your actual credentials.
+Replace `your_api_id`, `your_api_hash`, `your_bot_token`, and `your_bot_id` with your actual credentials. The `BOT_ID` should be the numeric ID of your bot (not the username).
 
 ### **4️⃣ Run the bot**
 Start the bot with:
@@ -108,4 +109,4 @@ For future improvements, we can add:
 ---
 
 ## 🤖 **Credits**
-Developed using **Python + Telethon**. Feel free to **fork, modify, and contribute**!  
+Developed using **Python + Telethon**. Feel free to **fork, modify, and contribute**!

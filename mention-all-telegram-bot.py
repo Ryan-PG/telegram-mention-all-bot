@@ -8,6 +8,7 @@ load_dotenv()
 api_id = os.getenv("API_ID")
 api_hash = os.getenv("API_HASH")
 bot_token = os.getenv("BOT_TOKEN")
+bot_id = int(os.getenv("BOT_ID"))
 
 client = TelegramClient("bot_session", api_id, api_hash).start(bot_token=bot_token)
 
@@ -17,12 +18,15 @@ async def get_all_members(event):
     members = []
     
     async for user in client.iter_participants(chat):
+        if user.id == bot_id:
+            continue  # Skip the bot itself
         if user.username:
             members.append(f"@{user.username}")
         else:
             members.append(f"[{user.first_name}](tg://user?id={user.id})")
 
     return members
+
 @client.on(events.NewMessage(func=lambda e: e.is_group and ("@all" in e.raw_text or "@mention_all_group_members_bot" in e.raw_text)))
 async def mention_all(event):
     """Reply to messages containing '@all' by mentioning all group members with constraints"""
